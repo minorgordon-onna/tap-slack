@@ -122,7 +122,10 @@
       ]
     },
     "priority": {
-      "type": "number"
+      "type": [
+        "null",
+        "number"
+      ]
     },
     "purpose": {
       "additionalProperties": false,
