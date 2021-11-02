@@ -251,8 +251,7 @@ class ConversationHistoryStream(SlackStream):
                                                                       date_fields=self.date_fields,
                                                                       channel_id=channel_id)
                                 for message in transformed_messages:
-                                    data = {'channel_id': channel_id}
-                                    data = {**data, **message}
+                                    data = {'channel_id': channel_id, **message}
 
                                     # If threads are being synced then the message data for the
                                     # message the threaded replies are in response to will be
