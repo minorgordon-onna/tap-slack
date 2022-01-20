@@ -8,8 +8,10 @@ import backoff
 import singer
 from slack.errors import SlackApiError
 
-BACKOFF_INTERVAL = 0.5
-BACKOFF_MAX_TRIES = 5
+# get_messages/conversations.history and get_thread/conversations_replies are Tier 3, 50+ requests per minute
+# An exception is almost certainly rate limiting.
+BACKOFF_INTERVAL = 15.0
+BACKOFF_MAX_TRIES = 4
 LOGGER = singer.get_logger()
 
 
